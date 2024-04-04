@@ -1,39 +1,56 @@
-# Material UI - Vite.js in TypeScript example
+# React Vite, Material UI, React Hook Form, React Router, React Testing Library and MSW Starter App
 
-## How to use
+React Vite Material is a modern, fast, and scalable web application built with Vite, leveraging React for the UI, Material UI for the design framework, React Router for navigation, React Hook Form for form management, MSW (Mock Service Worker) for testing API requests, and React Testing Library for comprehensive unit and integration tests.
 
-Download the example [or clone the repo](https://github.com/mui/material-ui):
+## Features
 
-<!-- #default-branch-switch -->
+- 🚀 **Fast Development**: Bootstrapped with Vite for an unbeatable developer experience.
+- 🎨 **Sleek Design**: Utilizes Material UI for a modern, responsive UI.
+- 🧭 **Dynamic Routing**: Employs React Router Dom for intuitive page navigation.
+- 📡 **API Mocking**: Integrates MSW for seamless API request testing.
+- 📝 **Form Management**: Leverages React Hook Form for efficient form handling.
+- 🔍 **Testing**: Incorporates React Testing Library for robust testing.
 
+## Examples
+
+### Authentication
+
+For authentication check the `AuthProvider`, `SignIn`, `ProtectedRoute` and `App` files. In the `App` file notice that `Dashboard` is wrapped with the `ProtecdedRoute`, so you can only access it if you are logged in. A `useLocalStorageState` was created to simulate a stable login, so it stays logged in if you refresh the page.
+
+### React Use Query
+
+The `useQueryWithMinimumLoading` was created so the API call takes at least 500ms, so the loading animations don't blink
+
+### API Testing
+
+We are using MSW for api testing. You can add more handlers for your API in the `serverHandler.ts` file. The `Order.test` file has an example of a API request being intercepted by MSW.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (LTS version)
+- npm
+
+### Installation
 ```bash
-curl https://codeload.github.com/mui/material-ui/tar.gz/next | tar -xz --strip=2 material-ui-next/examples/material-ui-vite-ts
-cd material-ui-vite-ts
+npm i
 ```
 
-Install it and run:
-
+### Running
 ```bash
-npm install
 npm run dev
 ```
 
-or:
+### Running tests
+```bash
+npm run test
+```
 
-<!-- #default-branch-switch -->
 
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/next/examples/material-ui-vite-ts)
+Clone the repository:
 
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/mui/material-ui/tree/next/examples/material-ui-vite-ts)
-
-## The idea behind the example
-
-This example uses [Vite.js](https://github.com/vitejs/vite).
-It includes `@mui/material` and its peer dependencies, including [Emotion](https://emotion.sh/docs/introduction), the default style engine in Material UI v5.
-
-## What's next?
-
-<!-- #default-branch-switch -->
-
-You now have a working example project.
-You can head back to the documentation and continue by browsing the [templates](https://next.mui.com/material-ui/getting-started/templates/) section.
+```bash
+git clone [https://github.com/yourusername/projectname.git](https://github.com/nelsonlarios/material-ui-vite.git)
+cd material-ui-vite
+```
