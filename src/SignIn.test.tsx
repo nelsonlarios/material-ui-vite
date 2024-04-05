@@ -13,6 +13,7 @@ test('submits form with email and password', async () => {
 		login: mockLogin,
 		logout: mockLogout,
 		isAuthenticated: mockIsAuthenticated,
+		isPasswordWrong: false,
 	}))
 
 	const user = userEvent.setup()
@@ -31,5 +32,4 @@ test('submits form with email and password', async () => {
 	await user.click(signInButton)
 
 	expect(mockLogin).toHaveBeenCalledWith('test@example.com', 'password123')
-	// Add more assertions for the expected behavior after form submission
 })

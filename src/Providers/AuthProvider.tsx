@@ -19,7 +19,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 	const [isPasswordWrong, setIsPasswordWrong] = useState(false)
 
 	function login(email: string | undefined, password: string | undefined) {
-		console.log({ email, password })
 		if (email === 'vite@email.com' && password === 'vite') {
 			setIsAuthenticated(true)
 		} else if (email && password) {
@@ -41,7 +40,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 }
 
 export function useAuth() {
-	console.log('useAuth')
 	const context = useContext(AuthContext)
 	if (!context) {
 		throw new Error('useAuth must be used within an AuthProvider')

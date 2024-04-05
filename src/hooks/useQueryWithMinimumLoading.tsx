@@ -17,17 +17,14 @@ function useQueryWithMinimumLoading<T>(
 				.catch(err => console.error(err)),
 	})
 
-	console.log({ isPending })
 	useEffect(() => {
 		let timer: number
-		console.log({ isPending, isSetTimeoutRunning })
 		if (!isPending && !isSetTimeoutRunning) {
 			setIsLoading(false)
 		} else {
 			setIsSetTimeoutRunning(true)
 			setIsLoading(true)
 			timer = window.setTimeout(() => {
-				console.log('setting isLoading to false')
 				setIsLoading(false)
 				setIsSetTimeoutRunning(false)
 			}, 500) // Ensure loading is shown for at least 1/2 second

@@ -46,7 +46,6 @@ export default function SignIn() {
 	const { login, isAuthenticated, isPasswordWrong } = useAuth()
 	const navigate = useNavigate()
 	const handleSubmitForm = (data: ISignInValues) => {
-		console.log('handleSubmit')
 		const { email, password } = data
 		console.log({
 			email,

@@ -24,17 +24,14 @@ export default function Orders() {
 
 	const { data, isLoading } = useQueryWithMinimumLoading<PersonApiResponse>(
 		['repoData', page.toString()],
-		`https://fakerapi.it/api/v1/persons?_quantity=5&_locale=en_UK?${page}`,
+		`https://fakerapi.it/api/v1/persons?_quantity=5&_locale=en_UK&page=${page}`,
 	)
 
 	const persons = data?.data ?? []
-	console.log({ persons })
 
 	function handlePageChange(_event: unknown, newPage: number) {
 		setPage(newPage)
 	}
-
-	console.log({ isLoading })
 
 	return (
 		<React.Fragment>
